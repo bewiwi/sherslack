@@ -32,6 +32,9 @@ func compareUser(slackUser, oldSlackUser slack.User) []string {
 		slackUser.Profile.StatusEmoji = oldSlackUser.Profile.StatusEmoji
 		slackUser.Profile.StatusText = oldSlackUser.Profile.StatusText
 	}
+	slackUser.TZLabel = oldSlackUser.TZLabel
+	slackUser.TZOffset = oldSlackUser.TZOffset
+	slackUser.TZ = oldSlackUser.TZ
 	slackUser.Updated = oldSlackUser.Updated
 	return pretty.Diff(oldSlackUser, slackUser)
 }
